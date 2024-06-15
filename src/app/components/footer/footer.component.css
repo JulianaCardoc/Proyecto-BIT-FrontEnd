@@ -1,0 +1,21 @@
+.container {
+  background-color: #ebd8d0;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.social-links i {
+  padding: 10px;
+}
+
+.links li {
+  padding: 10px;
+}
+
+img {
+  height: 88vh;
+}
+
+.copy {
+  padding: 10px;
+}

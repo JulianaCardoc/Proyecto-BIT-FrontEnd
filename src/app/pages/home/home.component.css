@@ -1,0 +1,183 @@
+.home-banner {
+  display: flex;
+  max-width: 100%;
+  height: 40vw;
+  background-image: url("/assets/images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: -230px;
+}
+
+.home-banner .wrap {
+  max-width: 1000px;
+  margin: auto 20vw;
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.home-banner .wrap .box {
+  flex-basis: 50%;
+  color: white;
+  text-align: left;
+  font-size: xx-large;
+  letter-spacing: 1px;
+  align-self: center;
+}
+
+.home-banner .wrap .box h1 {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  padding: 20px 0;
+}
+
+.banner-button button {
+  margin-top: 30px;
+  padding: 16px;
+  padding-left: 20px;
+  background-color: #403f3f;
+  border-radius: 30px;
+  border: none;
+  font-size: x-large;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  transition: all 0.5s;
+  width: 50%;
+}
+
+.banner-button button:after {
+  content: "»";
+  opacity: 0;
+  transition: 0.5s;
+  padding-left: 10px;
+}
+
+.banner-button button:hover {
+  padding-right: 15px;
+  padding-left: 8px;
+}
+
+.banner-button button:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+.categories {
+  margin: 3% 20%;
+  display: flex;
+  max-width: 1200px;
+  height: 45vw;
+  gap: 24px;
+}
+
+.horizontal-images {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 60%;
+}
+
+.vertical-image {
+  background-image: url(/assets/images/perfumes.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.txt {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: baseline;
+  padding: 5%;
+}
+
+.txt h3 {
+  font-weight: 300;
+  font-size: x-large;
+  color: #403f3f;
+}
+
+.txt button, .discount-card button {
+  cursor: pointer;
+  background-color: #403f3f;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 15px;
+  font-size: large;
+  font-weight: 200;
+}
+
+.top-image {
+  background-image: url("/assets/images/perfume-men.jpg");
+}
+
+.bottom-image {
+  background-image: url(/assets/images/perfume-women.jpg);
+}
+
+.top-image,
+.bottom-image {
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.brands {
+  background-color: #ebd8d0;
+}
+
+.brands-txt h3 {
+  font-size: xx-large;
+  padding: 20px 40px;
+  margin: 0 18%;
+  font-weight: 300;
+}
+
+.brands-logo {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px 0;
+  margin: 0 10%;
+}
+
+.brands-logo img {
+  width: 6%;
+}
+
+.products-discount {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 4% 10%;
+  align-items: center;
+}
+
+.discount-card {
+  width: min-content;
+  text-align: center;
+}
+
+.discount-img img {
+  width: 15vw;
+}
+.discount-card button {
+  cursor: pointer;
+  background-color: #403f3f;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 15px;
+  font-size: large;
+  font-weight: 200;
+}

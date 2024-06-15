@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a, h3, button, p {
+    font-family: "Outfit", sans-serif;
+}
+
+li, a, h3, button {
+  color: #403f3f;
+}
+
+li,
+a {
+  text-decoration: none;
+  font-size: large;
+}
+
+li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+li,
+a:hover {
+  color: #0e0e0e;
+}
+
