@@ -1,0 +1,146 @@
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-detail {
+  display: flex;
+  margin-top: 80px;
+  justify-content: space-evenly;
+}
+
+.product-gallery {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 65%;
+  position: relative;
+  align-content: center;
+}
+
+.principal-image img {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.product-summary {
+  border-bottom: 1px solid #403f3f;
+  margin-bottom: 20px;
+}
+
+.product-gallery-other-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  gap: 20px;
+}
+
+.product-gallery-other-images img {
+  width: 90%;
+}
+
+.product-parameters {
+  width: 35%;
+  margin-top: 30px;
+}
+
+.product-summary h1 {
+  font-size: 52px;
+  margin: 30px 0;
+}
+
+.product-summary p {
+  margin: 20px 0;
+}
+
+p,
+.price {
+  font-size: 20px;
+}
+
+.price {
+  font-size: 30px;
+  font-family: "Outfit", sans-serif;;
+}
+
+.cart {
+  display: flex;
+  height: auto;
+  margin: 10px 0;
+  border-bottom: 1px solid #403f3f;
+  padding-bottom: 20px;
+}
+
+.cart input {
+  padding-left: 15px;
+  margin-right: 10px;
+  width: 50px;
+}
+
+.cart button {
+  padding: 10px;
+  background-color: #403f3f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.product-tags {
+  display: flex;
+  gap: 10px;
+}
+
+.product-description {
+  border-top: 1px solid #403f3f;
+  margin-top: 100px;
+  color: #403f3f;
+}
+
+.product-description h1 {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  font-size: 40px;
+}
+
+.product-description p {
+    padding-bottom: 60px;
+}
+
+.related-product-title {
+    border-top: 1px solid #403f3f;
+    padding-top: 40px;
+}
+
+.related-product-title h1 {
+    font-size: 40px;
+}
+
+.related-products {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0 100px 0;
+  align-items: center;
+}
+
+.related-product-card {
+  width: min-content;
+  text-align: center;
+}
+
+.related-product-img img {
+  width: 15vw;
+}
+.related-product-card button {
+  cursor: pointer;
+  background-color: #403f3f;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 15px;
+  font-size: large;
+  font-weight: 200;
+}

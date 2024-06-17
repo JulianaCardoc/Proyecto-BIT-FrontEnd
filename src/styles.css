@@ -7,11 +7,11 @@
     padding: 0;
 }
 
-li, a, h3, button, p {
+li, a, h3, button, p, h1 {
     font-family: "Outfit", sans-serif;
 }
 
-li, a, h3, button {
+li, a, h3, button, h1 {
   color: #403f3f;
 }
 

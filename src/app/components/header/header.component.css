@@ -35,7 +35,6 @@ header {
   height: 100vh;
   z-index: 999;
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-  display: none;
   flex-direction: column;
   align-items: flex-start;
   background-color: rgba(255, 255, 255, 0.514);
@@ -43,6 +42,14 @@ header {
   gap: 20px;
   backdrop-filter: blur(10px);
   padding-right: 30px;
+  opacity: 0;
+  transform: translateX(105%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.sidebar.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .sidebar:first-child {
