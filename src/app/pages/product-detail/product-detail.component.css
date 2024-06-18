@@ -93,6 +93,10 @@ p,
   gap: 10px;
 }
 
+.product-tags p {
+  font-size: 15px;
+}
+
 .product-description {
   border-top: 1px solid #403f3f;
   margin-top: 100px;
@@ -118,29 +122,5 @@ p,
     font-size: 40px;
 }
 
-.related-products {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 20px 0 100px 0;
-  align-items: center;
-}
 
-.related-product-card {
-  width: min-content;
-  text-align: center;
-}
 
-.related-product-img img {
-  width: 15vw;
-}
-.related-product-card button {
-  cursor: pointer;
-  background-color: #403f3f;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 20px;
-  margin-top: 15px;
-  font-size: large;
-  font-weight: 200;
-}

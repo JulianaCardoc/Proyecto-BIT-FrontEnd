@@ -1,0 +1,27 @@
+.product {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0 100px 0;
+  align-items: center;
+}
+
+.product-card {
+  width: min-content;
+  text-align: center;
+}
+
+.product-img img {
+  width: 15vw;
+}
+
+.product-card button {
+  cursor: pointer;
+  background-color: #403f3f;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 15px;
+  font-size: large;
+  font-weight: 200;
+}
+

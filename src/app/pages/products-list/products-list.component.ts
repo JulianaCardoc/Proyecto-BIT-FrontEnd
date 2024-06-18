@@ -4,12 +4,12 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-products-list',
   standalone: true,
   imports: [HeaderComponent, FooterComponent, ProductCardComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './products-list.component.html',
+  styleUrl: './products-list.component.css'
 })
-export class HomeComponent {
+export class ProductsListComponent {
 
 }
