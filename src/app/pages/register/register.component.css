@@ -1,0 +1,85 @@
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    align-content: center;
+    padding: 5% 0;
+}
+
+.login {
+    border: 1px solid var(--main-txt-color);
+    border-radius: 5px;
+}
+
+.login h1 {
+    padding: 30px;
+    font-size: 40px;
+}
+
+h1, p {
+    text-align: center;
+}
+
+p {
+    color: var(--main-txt-color);
+}
+
+a {
+    font-size: 16px;
+    color: #ebd5d0;
+}
+
+label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    min-height: 3em;
+    margin: 10px 0 0 0;
+    padding: 5px;
+    border: 1px solid #cacaca;
+}
+
+.document-field {
+    display: flex;
+    width: 100%;
+}
+
+#document-type {
+    display: block;
+    font-family: "Outfit", sans-serif;
+    color: var(--main-txt-color);
+}
+
+#document-type option {
+    font-family: "Outfit", sans-serif;
+    color: var(--main-txt-color);
+}
+
+label[for=document] {
+    width: 80%;
+}
+
+label[for=document-type] {
+    margin-left: 20px;
+}
+
+#document-type {
+    margin: 10px 0 0 0;
+    min-height: 3em;
+    border: 1px solid #cacaca
+}
+
+fieldset {
+    border: none;
+    padding: 30px 50px;
+}
+
+#submit {
+    background-color: var(--main-txt-color);
+    border: none;
+    color: white;
+    min-height: 3em;
+    cursor: pointer;
+}

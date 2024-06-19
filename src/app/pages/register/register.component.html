@@ -1,0 +1,35 @@
+<app-header></app-header>
+<main>
+    <section class="login">
+        <h1>Create an account</h1>
+        <p>Already have an account? <a href="#">Sign up</a></p>
+        <form method="post">
+            <fieldset>
+                <label for="email">Email:
+                    <input id="email" name="email" type="text" placeholder="Email" required /></label>
+                <label for="name">Name:
+                    <input id="name" name="name" type="text" placeholder="Name" required /></label>
+                <label for="lastname">Lastname:
+                    <input id="lastname" name="lastname" type="text" placeholder="Lastname" required /></label>
+                <div class="document-field">
+                    <label for="document">Document:
+                    <input id="document" name="document" type="text" placeholder="Document" required /></label>
+                <label for="document-type">Type:
+                    <select id="document-type" name="document-type">
+                        <option value="1">CC</option>
+                        <option value="2">CE</option>
+                        <option value="3">Passport</option>
+                    </select>
+                </label></div>
+                <label for="cellphone">Cellphone:
+                    <input id="cellphone" name="cellphone" type="text" placeholder="Cellphone" required /></label>
+                <label for="password">Password:
+                    <input id="password" name="password" type="text" placeholder="Password" required /></label>
+                <label for="repeat-password">Repeat Password:
+                    <input id="repeat-password" name="repeat-password" type="text" placeholder="Repeat Password" required /></label>
+                    <input id="submit" type="submit" value="Register" />
+            </fieldset>
+        </form>
+    </section>
+</main>
+<app-footer></app-footer>

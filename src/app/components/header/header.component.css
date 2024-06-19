@@ -19,13 +19,13 @@ header {
 } 
 
 .fa-bars {
-  color: #403f3f;
+  color: var(--main-txt-color);
   width: 26px;
 }
 
 .sidebar .fa-solid {
   padding-right: 10px;
-  color: #403f3f;
+  color: var(--main-txt-color);
 }
 
 .sidebar {

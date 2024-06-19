@@ -7,12 +7,17 @@
     padding: 0;
 }
 
-li, a, h3, button, p, h1 {
+:root {
+  --main-bg-color: #ebd8d0;
+  --main-txt-color: #403f3f;
+}
+
+li, a, h3, button, p, h1, label, input {
     font-family: "Outfit", sans-serif;
 }
 
 li, a, h3, button, h1 {
-  color: #403f3f;
+  color: var(--main-txt-color);
 }
 
 li,

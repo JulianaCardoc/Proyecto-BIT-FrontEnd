@@ -1,5 +1,5 @@
 .container {
-  background-color: #ebd8d0;
+  background-color: var(--main-bg-color);
   text-align: center;
   padding: 10px 0;
 }

@@ -16,7 +16,7 @@
 
 .product-card button {
   cursor: pointer;
-  background-color: #403f3f;
+  background-color: var(--main-txt-color);
   color: white;
   padding: 10px;
   border: none;
