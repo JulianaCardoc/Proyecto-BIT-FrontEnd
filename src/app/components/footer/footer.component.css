@@ -1,21 +1,28 @@
 .container {
   background-color: var(--main-bg-color);
   text-align: center;
-  padding: 10px 0;
+  padding: 1vw 0;
 }
 
 .social-links i {
-  padding: 10px;
+  padding: 1vw;
 }
 
 .links li {
-  padding: 10px;
-}
-
-img {
-  height: 88vh;
+  padding: 1vw;
 }
 
 .copy {
-  padding: 10px;
+  padding: 0.5vw;
+}
+
+small {
+  font-size: 0.8vw;
+}
+
+@media (max-width: 840px) {
+  a {
+    font-size: 2vw;
+  }
+
 }

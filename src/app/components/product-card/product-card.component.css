@@ -1,8 +1,12 @@
 .product {
   display: flex;
   justify-content: space-evenly;
-  margin: 20px 0 100px 0;
+  margin: 3vw 0 7vw 0;
   align-items: center;
+}
+
+a {
+  font-size: 1.3vw;
 }
 
 .product-card {
@@ -18,10 +22,15 @@
   cursor: pointer;
   background-color: var(--main-txt-color);
   color: white;
-  padding: 10px;
+  padding: 1vw;
   border: none;
   margin-top: 15px;
-  font-size: large;
+  font-size: 1.3vw;
   font-weight: 200;
 }
 
+@media (max-width: 840px) {
+  .product-card button {
+    margin-top: 0.2vw;
+  }
+}

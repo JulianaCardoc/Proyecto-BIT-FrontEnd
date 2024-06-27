@@ -1,17 +1,20 @@
+main {
+  margin-top: 68px;
+}
+
 .home-banner {
   display: flex;
   max-width: 100%;
-  height: 40vw;
+  height: 50vw;
   background-image: url(/assets/images/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-position-y: -230px;
 }
 
 .home-banner .wrap {
   max-width: 1000px;
-  margin: auto 20vw;
+  margin: auto 10vw;
   height: 100%;
   display: flex;
   flex-flow: column wrap;
@@ -22,7 +25,7 @@
   flex-basis: 50%;
   color: white;
   text-align: left;
-  font-size: xx-large;
+  font-size: 3vw;
   letter-spacing: 1px;
   align-self: center;
 }
@@ -36,17 +39,17 @@
 
 .banner-button button {
   margin-top: 30px;
-  padding: 16px 0;
+  padding: 1vw 0;
   padding-left: 20px;
   background-color: var(--main-txt-color);
-  
+
   border: none;
-  font-size: x-large;
+  font-size: 1.5vw;
   cursor: pointer;
   text-align: center;
   color: white;
   transition: all 0.5s;
-  width: 50%;
+  width: 40%;
 }
 
 .banner-button button:after {
@@ -70,7 +73,6 @@
   margin: 3% auto;
   display: flex;
   max-width: 1200px;
-  height: 45vw;
   gap: 24px;
 }
 
@@ -88,6 +90,7 @@
   background-repeat: no-repeat;
   border-radius: 5px;
   width: 50%;
+  height: 40vw;
 }
 
 .txt {
@@ -101,18 +104,19 @@
 
 .txt h3 {
   font-weight: 300;
-  font-size: 35px;
+  font-size: 2.5vw;
   color: var(--main-txt-color);
 }
 
-.txt button, .discount-card button {
+.txt button,
+.discount-card button {
   cursor: pointer;
   background-color: var(--main-txt-color);
   color: white;
   padding: 10px;
   border: none;
   margin-top: 15px;
-  font-size: large;
+  font-size: 1.3vw;
   font-weight: 200;
 }
 
@@ -138,7 +142,7 @@
 }
 
 .brands-txt h1 {
-  font-size: 35px;
+  font-size: 2.6vw;
   padding: 2% 0;
   margin: 0 auto;
   max-width: 1200px;
@@ -147,10 +151,9 @@
 .brands-logo {
   display: flex;
   justify-content: space-evenly;
-  padding: 30px 0 50px 0;
+  padding: 3vw 0 5vw 0;
   margin: 0 auto;
   max-width: 1200px;
-
 }
 
 .brands-logo img {
@@ -158,10 +161,67 @@
 }
 
 .products-discount-txt h1 {
-  font-size: 35px;
+  font-size: 2.6vw;
 }
 
 .products-discount {
   max-width: 1200px;
   margin: 3% auto;
+}
+
+@media (max-width: 1350px) {
+  .categories,
+  .products-discount,
+  .brands-txt h1,
+  .brands-logo {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .categories,
+  .products-discount,
+  .brands-txt h1,
+  .brands-logo {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 844px) {
+  main {
+    margin-top: 75px;
+  }
+  .categories {
+    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .txt button,
+  .discount-card button {
+    padding: 5px;
+  }
+  .products-discount,
+  .brands-txt h1,
+  .brands-logo {
+    max-width: 600px;
+  }
+  .vertical-image {
+    width: 60%;
+  }
+  .top-image,
+  .bottom-image {
+    height: 40vw;
+  }
+}
+
+@media (max-width: 620px) {
+  main {
+    margin-top: 64px;
+  }
+  .categories,
+  .products-discount,
+  .brands-txt h1,
+  .brands-logo {
+    max-width: 350px;
+  }
 }

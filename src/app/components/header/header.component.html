@@ -6,7 +6,14 @@
     <ul class="sidebar" [class.show] = "sidebarShowctrl.value">
       <li (click)="toggleSidebar()"><i class="fa-solid fa-xmark"></i></li>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
+      <li><a href="#">Products <i class="fa-solid fa-angle-down"></i></a>
+        
+      </li>
+      
+
+
+
+
       <li><a href="#">Contact</a></li>
       <li><a href="#"><i class="fa-regular fa-user"></i>My account</a></li>
     <li>
@@ -15,7 +22,14 @@
     </ul>
     <ul>
       <li class="hideOnMobile"><a href="#">Home</a></li>
-      <li class="hideOnMobile"><a href="#">Products</a></li>
+      <li class="hideOnMobile"><a href="#">Products <i class="fa-solid fa-angle-down"></i></a>
+        <ul class="dropdown">
+          <li>For him</li>
+          <li>For her</li>
+          <li>Kids</li>
+          <li>On sale</li>
+        </ul>
+      </li>
       <li class="hideOnMobile"><a href="#">Contact</a></li>
     </ul>
   </nav>
