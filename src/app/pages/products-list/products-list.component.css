@@ -1,5 +1,31 @@
+main {
+    margin-top: 140px;
+}
+
+.products-list h1 {
+    font-size: 2.2rem;
+    margin: 0 auto;
+}
+
 .products-list {
     max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+@media (max-width: 844px) {
+    main {
+        margin-top: 100px;
+    }
+    .products-list {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 620px) {
+    .products-list {
+        max-width: 350px;
+    }
+}
+
+

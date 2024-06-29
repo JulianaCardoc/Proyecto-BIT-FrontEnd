@@ -1,6 +1,6 @@
 main {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 68px auto 0 auto;
     align-content: center;
     padding: 5% 0;
 }
@@ -11,8 +11,8 @@ main {
 }
 
 .login h1 {
-    padding: 30px;
-    font-size: 40px;
+    padding: 2.6vw;
+    font-size: var(--titles-font-size);;
 }
 
 h1, p {
@@ -20,17 +20,18 @@ h1, p {
 }
 
 p {
-    color: var(--main-txt-color);
+    font-size: var(--txt-font-size);
 }
 
 a {
-    font-size: 16px;
-    color: var(--main-bg-color);
+    font-size: var(--txt-font-size);
+    color: #EAAC8B;
 }
 
 label {
     display: block;
     padding-bottom: 10px;
+    font-size: var(--txt-font-size);
 }
 
 input {
@@ -52,5 +53,17 @@ fieldset {
     color: white;
     min-height: 3em;
     cursor: pointer;
+    font-size: var(--txt-font-size);
 }
 
+@media (max-width: 844px) {
+    main {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 620px) {
+    main {
+        max-width: 350px;
+    }
+}

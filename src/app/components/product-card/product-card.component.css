@@ -6,16 +6,17 @@
 }
 
 a {
-  font-size: 1.3vw;
+  font-size: var(--txt-font-size);
 }
 
 .product-card {
-  width: min-content;
   text-align: center;
 }
 
 .product-img img {
-  width: 15vw;
+  width: 70%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .product-card button {
@@ -25,11 +26,14 @@ a {
   padding: 1vw;
   border: none;
   margin-top: 15px;
-  font-size: 1.3vw;
+  font-size: var(--txt-font-size);
   font-weight: 200;
 }
 
 @media (max-width: 840px) {
+  .product {
+    flex-direction: column;
+  }
   .product-card button {
     margin-top: 0.2vw;
   }

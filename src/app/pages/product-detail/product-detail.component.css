@@ -1,5 +1,5 @@
 main {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -14,13 +14,13 @@ main {
   flex-direction: row-reverse;
   position: relative;
   align-content: center;
+  flex-wrap: wrap;
 }
 
 .principal-image img {
   width: 35vw;
   margin-left: auto;
   margin-right: auto;
-  display: block;
 }
 
 .product-summary {
@@ -33,6 +33,7 @@ main {
   flex-direction: column;
   justify-content: center;
   gap: 2vw;
+  padding-right: 5vw;
 }
 
 .product-gallery-other-images img {
@@ -45,7 +46,7 @@ main {
 }
 
 .product-summary h1 {
-  font-size: 4vw;
+  font-size: var(--titles-font-size);
   margin: 2vw 0;
 }
 
@@ -53,14 +54,8 @@ main {
   margin: 2vw 0;
 }
 
-p,
-.price, a {
-  font-size: 1.3vw;
-}
-
 .price {
-  font-size: 1.8vw;
-  font-family: "Outfit", sans-serif;;
+  font-size: 1.5rem;
 }
 
 .cart {
@@ -75,6 +70,7 @@ p,
   padding-left: 15px;
   margin-right: 10px;
   width: 50px;
+  font-size: var(--txt-font-size);
 }
 
 .cart button {
@@ -83,7 +79,7 @@ p,
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 1.2vw;
+  font-size: var(--txt-font-size);
 }
 
 .product-tags {
@@ -91,20 +87,15 @@ p,
   gap: 10px;
 }
 
-.product-tags p {
-  font-size: 1vw;
-}
-
 .product-description {
   border-top: 1px solid var(--main-txt-color);
   margin-top: 8vw;
-  color: var(--main-txt-color);
 }
 
 .product-description h1 {
   padding-top: 2vw;
   padding-bottom: 2.5vw;
-  font-size: 2.8vw;
+  font-size: var(--titles-font-size);
 }
 
 .product-description p {
@@ -117,7 +108,7 @@ p,
 }
 
 .related-product-title h1 {
-    font-size: 2.8vw;
+    font-size: var(--titles-font-size);
 }
 
 @media (max-width: 1050px) {
@@ -136,6 +127,9 @@ p,
   .product-detail {
     flex-direction: column;
   }
+  .principal-image img {
+    width: 50vw;
+  }
   .product-parameters {
     width: 100%;
     margin-top: 0;
@@ -144,10 +138,9 @@ p,
 
 @media (max-width: 620px) {
   main {
-    max-width: 350px;
+    max-width: 360px;
   }
   .cart input {
     width: 40px;
-    font-size: 1.2vw;
   }
 }

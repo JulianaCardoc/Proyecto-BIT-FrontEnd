@@ -10,20 +10,22 @@
 :root {
   --main-bg-color: #ebd8d0;
   --main-txt-color: #403f3f;
+  --titles-font-size: 2.2rem;
+  --txt-font-size: 1rem;
 }
 
-li, a, h3, button, p, h1, label, input {
+li, a, h2, h3, button, p, h1, label, input, span {
     font-family: "Outfit", sans-serif;
 }
 
-li, a, h3, button, h1 {
+li, a, h2, h3, button, p, h1, span, label {
   color: var(--main-txt-color);
 }
 
 li,
 a {
   text-decoration: none;
-  font-size: large;
+  font-size: 1.1rem;
 }
 
 li {

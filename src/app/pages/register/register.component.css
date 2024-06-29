@@ -1,6 +1,6 @@
 main {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 68px auto 0 auto;
     align-content: center;
     padding: 5% 0;
 }
@@ -12,20 +12,16 @@ main {
 
 .login h1 {
     padding: 30px;
-    font-size: 40px;
+    font-size: var(--titles-font-size);
 }
 
 h1, p {
     text-align: center;
 }
 
-p {
-    color: var(--main-txt-color);
-}
-
 a {
-    font-size: 16px;
-    color: #ebd5d0;
+    font-size: var(--txt-font-size);
+    color: #EAAC8B;
 }
 
 label {
@@ -82,4 +78,17 @@ fieldset {
     color: white;
     min-height: 3em;
     cursor: pointer;
+    font-size: var(--txt-font-size);
+}
+
+@media (max-width: 844px) {
+    main {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 620px) {
+    main {
+        max-width: 350px;
+    }
 }

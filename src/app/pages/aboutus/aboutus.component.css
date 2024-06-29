@@ -1,0 +1,51 @@
+main {
+    max-width: 1000px;
+    margin: 68px auto 0 auto;
+    align-content: center;
+    padding: 5% 0;
+}
+
+.title {
+    padding-bottom: 4vw;
+}
+
+h1 {
+    font-size: var(--titles-font-size);
+}
+
+p {
+    font-size: var(--txt-font-size);
+    padding-top: 1.5vw;
+}
+
+.about-store {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.about-store div {
+    padding-top: 8vw;
+}
+
+.fa-solid {
+    font-size: 3.5rem;
+    color: var(--main-txt-color);
+    padding-bottom: 2vw;
+}
+
+@media (max-width: 844px) {
+    main {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 620px) {
+    main {
+        max-width: 350px;
+    }
+    .about-store {
+        flex-direction: column;
+        align-items: center;
+    }
+}

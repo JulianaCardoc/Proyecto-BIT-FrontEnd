@@ -1,0 +1,68 @@
+main {
+    max-width: 800px;
+    margin: 68px auto 0 auto;
+    align-content: center;
+    padding: 5% 0;
+}
+
+h1 {
+    font-size: var(--titles-font-size);
+}
+
+p, span {
+    font-size: var(--txt-font-size);
+}
+
+.user-info {
+    display: flex;
+    margin-top: 2vw;
+}
+
+.user-info button {
+    background-color: white;
+    padding: 1vw;
+    border: 1px solid #e6e6e6;
+    font-size: var(--txt-font-size);
+    cursor: pointer;
+}
+
+.user-info button:hover {
+    background-color: #f3f4f6;;
+}
+
+.personal-info {
+    padding-top: 2vw;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title button {
+    padding: 0.2vw;
+    background-color: white;
+    padding: 0.5vw;
+    border: 1px solid #e6e6e6;
+    font-size: var(--txt-font-size);
+    cursor: pointer;
+}
+
+.card-list {
+    margin-top: 0.5vw;
+    border: 1px solid #e6e6e6;
+    padding: 1vw;
+}
+
+.card-info {
+    display: flex;
+    padding: 5px;
+}
+
+.card-info span {
+    padding-right: 10px;
+}
+
+.document {
+    padding-left: 30px;
+}

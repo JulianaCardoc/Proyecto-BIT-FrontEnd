@@ -6,6 +6,7 @@
 
 .social-links i {
   padding: 1vw;
+  font-size: 1.5rem;
 }
 
 .links li {
@@ -16,13 +17,8 @@
   padding: 0.5vw;
 }
 
-small {
-  font-size: 0.8vw;
-}
-
-@media (max-width: 840px) {
+@media (max-width: 844px) {
   a {
-    font-size: 2vw;
+    font-size: var(--txt-font-size);
   }
-
 }
