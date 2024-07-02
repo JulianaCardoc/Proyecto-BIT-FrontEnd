@@ -9,6 +9,10 @@ h1 {
     font-size: var(--titles-font-size);
 }
 
+h3 {
+    font-size: var(--txt-font-size);
+}
+
 p, span {
     font-size: var(--txt-font-size);
 }
@@ -19,18 +23,18 @@ p, span {
 }
 
 .user-info button {
-    background-color: white;
     padding: 1vw;
+}
+
+button {
+    background-color: white;
+    padding: 0.5vw;
     border: 1px solid #e6e6e6;
     font-size: var(--txt-font-size);
     cursor: pointer;
 }
 
-.user-info button:hover {
-    background-color: #f3f4f6;;
-}
-
-.personal-info {
+.personal-info, .addresses-info, .my-orders-info {
     padding-top: 2vw;
 }
 
@@ -39,13 +43,8 @@ p, span {
     justify-content: space-between;
 }
 
-.title button {
-    padding: 0.2vw;
-    background-color: white;
-    padding: 0.5vw;
-    border: 1px solid #e6e6e6;
-    font-size: var(--txt-font-size);
-    cursor: pointer;
+button:hover {
+    background-color: #f3f4f6;;
 }
 
 .card-list {
@@ -57,12 +56,57 @@ p, span {
 .card-info {
     display: flex;
     padding: 5px;
+    align-items: center;
 }
 
-.card-info span {
+.card-info span, h3 {
     padding-right: 10px;
 }
 
 .document {
     padding-left: 30px;
+}
+
+.card {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 5px 0;
+}
+
+.card-info button {
+    align-items: flex-end;
+}
+
+.address-edit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-summary h3 {
+    color: #F56476;
+}
+
+.order-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 5px;
+    text-align: center;
+}
+
+@media (max-width: 844px) {
+    main {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 620px) {
+    main {
+        max-width: 350px;
+    }
+    
 }

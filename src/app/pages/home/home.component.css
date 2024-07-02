@@ -171,6 +171,13 @@ main {
   margin: 3% auto;
 }
 
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 @media (max-width: 1350px) {
   .categories,
   .products-discount,
@@ -213,6 +220,12 @@ main {
   .top-image,
   .bottom-image {
     height: 40vw;
+  }
+  .product-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
 

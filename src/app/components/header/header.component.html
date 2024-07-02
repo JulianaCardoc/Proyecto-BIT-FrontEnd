@@ -1,46 +1,63 @@
 <header>
   <div class="logo">
-    <a href="#"><img src="/assets/images/2.png" alt="" /></a>
+    <a routerLink="/"><img src="/assets/images/2.png" alt="" /></a>
   </div>
   <nav>
-    <ul class="sidebar" [class.show] = "sidebarShowctrl.value">
+    <!-- Sidebar -->
+
+    <ul class="sidebar" [class.show]="sidebarShowctrl.value">
       <li (click)="toggleSidebar()"><i class="fa-solid fa-xmark"></i></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products <i class="fa-solid fa-angle-down"></i></a>
-        
+      <li><a routerLink="/">Home</a></li>
+      <li>
+        <a routerLink="/productsList">Products <i class="fa-solid fa-angle-down"></i></a>
       </li>
-      
-
-
-
-
-      <li><a href="#">Contact</a></li>
-      <li><a href="#"><i class="fa-regular fa-user"></i>My account</a></li>
-    <li>
-      <a href="#"><i class="fa-solid fa-cart-shopping"></i>My cart</a>
-    </li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li>
+        <a href="#"><i class="fa-regular fa-user"></i>My account</a>
+      </li>
+      <li>
+        <a href="#" (click)="toggleShowCart()"
+          ><i class="fa-solid fa-cart-shopping">My cart </i></a
+        >
+      </li>
     </ul>
+
     <ul>
-      <li class="hideOnMobile"><a href="#">Home</a></li>
-      <li class="hideOnMobile"><a href="#">Products <i class="fa-solid fa-angle-down"></i></a>
+      <li class="hideOnMobile"><a routerLink="/">Home</a></li>
+      <li class="hideOnMobile">
+        <a [routerLink]="['/productsList', '']">Products <i class="fa-solid fa-angle-down"></i></a>
         <ul class="dropdown">
-          <li>For him</li>
-          <li>For her</li>
-          <li>Kids</li>
-          <li>On sale</li>
+          @for(category of categories(); track $index) {
+            <a [routerLink]="['/productsList', category._id]"><li>{{category.name}}</li></a>
+
+          }
+          <a [routerLink]="['/productsList', 'onSale']"><li>On Sale</li></a>
         </ul>
       </li>
-      <li class="hideOnMobile"><a href="#">Contact</a></li>
+      <li class="hideOnMobile"><a routerLink="/contact">Contact</a></li>
     </ul>
   </nav>
   <ul>
-    <li class="hideOnMobile"><a href="#"><i class="fa-regular fa-user"></i>My account</a></li>
     <li class="hideOnMobile">
-      <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      <a href="#"><i class="fa-regular fa-user"></i>My account</a>
     </li>
-    <li class="hideOnMobile" class="menu-bar" (click)="toggleSidebar()"><i class="fa-solid fa-bars"></i></li>
+    <li class="hideOnMobile" (click)="toggleShowCart()">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </li>
+    <li class="hideOnMobile" class="menu-bar" (click)="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </li>
   </ul>
 </header>
-
-
-
+<aside [ngClass]="hideCart() ? 'cart show' : 'cart'">
+  <h2>My cart ({{cart().size}})</h2><span class="close" (click)="toggleShowCart()"><i class="fa-solid fa-xmark"></i></span>
+  <section class="cart-products">
+      @for(perfume of cart().values(); track perfume._id) {
+      <app-cart [perfume]="perfume" />
+      }
+  </section>
+  <div class="details">
+      <h3>Total <span>{{ total() | currency }}</span></h3>
+      <a routerLink="/checkout" class="checkout">Checkout</a>
+  </div>
+</aside>

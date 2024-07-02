@@ -1,20 +1,15 @@
-.product {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 3vw 0 7vw 0;
-  align-items: center;
-}
-
 a {
   font-size: var(--txt-font-size);
 }
 
 .product-card {
   text-align: center;
+  margin: 3vw 0;
 }
 
 .product-img img {
-  width: 70%;
+  min-width: 300px;
+  max-width: 300px;
   aspect-ratio: 1/1;
   object-fit: cover;
 }
@@ -31,10 +26,10 @@ a {
 }
 
 @media (max-width: 840px) {
-  .product {
-    flex-direction: column;
-  }
   .product-card button {
     margin-top: 0.2vw;
+  }
+  .product-card {
+    margin: 5vw 0;
   }
 }

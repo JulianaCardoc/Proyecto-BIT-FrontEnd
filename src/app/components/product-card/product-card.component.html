@@ -1,32 +1,12 @@
 <div class="product">
   <div class="product-card">
-    <a href="#">
+    <a [routerLink]="['/perfume', perfume._id]">
       <div class="product-img">
-        <img src="/assets/images/CHEDT1.png" alt="" />
+        <img [src]="perfume.images[0].imgUrl" alt="" />
       </div>
-      <h2>CHEDT</h2>
-      <p>$450.000</p>
+      <h2>{{perfume.name}}</h2>
+      <p>{{perfume.price | currency: '$': 'symbol':'1.0-0'}}</p>
     </a>
-    <a href="#"><button>Add to cart</button></a>
-  </div>
-  <div class="product-card">
-    <a href="#">
-      <div class="product-img">
-        <img src="/assets/images/CHEDT1.png" alt="" />
-      </div>
-      <h2>CHEDT</h2>
-      <p>$450.000</p>
-    </a>
-    <a href="#"><button>Add to cart</button></a>
-  </div>
-  <div class="product-card">
-    <a href="#">
-      <div class="product-img">
-        <img src="/assets/images/CHEDT1.png" alt="" />
-      </div>
-      <h2>CHEDT</h2>
-      <p>$450.000</p>
-    </a>
-    <a href="#"><button>Add to cart</button></a>
+    <button class="add-cart" (click)="addToCart(perfume)">Add to cart</button>
   </div>
 </div>

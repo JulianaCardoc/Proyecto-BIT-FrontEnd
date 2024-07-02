@@ -1,0 +1,73 @@
+.product {
+    display: flex;
+    position: relative;
+    padding: 0 15px;
+}
+
+.product figure {
+    width: 50%;
+    display: flex;
+    gap: 1rem;
+}
+
+.product figure img {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 3px;
+    aspect-ratio: 1/1;
+    background-color: white;
+}
+
+.product figure figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: var(--txt-font-size);
+    flex-grow: 1;
+}
+
+.product .actions {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    right: 0;
+}
+
+.product .actions form {
+    display: flex;
+    gap: 0.5rem
+}
+
+button.remove {
+    background-color: white;
+    padding: 0.5vw;
+    border: 1px solid #e6e6e6;
+    font-size: var(--txt-font-size);
+    cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    background-color: white;
+}
+
+.product .actions form input {
+    width: 2rem;
+    text-align: center;
+}
+
+.product .actions form button.increment,
+.product .actions form button.decrement {
+    display: inline-block;
+    width: 1.6rem;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #403f3f;
+}
+

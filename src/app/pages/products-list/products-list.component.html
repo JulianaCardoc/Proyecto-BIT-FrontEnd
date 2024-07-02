@@ -1,8 +1,18 @@
-<app-header></app-header>
 <main>
-<section class="products-list">
-    <div><h1>── Name of the page</h1></div>
-<app-product-card></app-product-card>
-</section>
+  <section class="products-list">
+    @if(!category() || categoryId === '') {
+      <div><h1>── All products</h1></div>  
+    } @else { 
+      @if(categoryId === 'onSale'){
+        <div><h1>── Products on Sale</h1></div> 
+      } @else {
+      <div><h1>── {{category()?.name}}</h1></div>
+      }
+    }
+    <div class="product-card">
+      @for (perfume of perfumes(); track $index) {
+      <app-product-card [perfume]="perfume"></app-product-card>
+      }
+    </div>
+  </section>
 </main>
-<app-footer></app-footer>

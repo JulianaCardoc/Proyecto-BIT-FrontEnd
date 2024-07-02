@@ -1,0 +1,17 @@
+<article class="product cart">
+    <figure>
+        <img [src]="perfume.images[0].imgUrl" alt="">
+        <figcaption>
+            <h3>{{perfume.name}}</h3>
+            <p>{{perfume.price | currency: '$': 'symbol':'1.0-0'}}</p>
+        </figcaption>
+    </figure>
+    <div class="actions">
+        <button class="remove" (click)="remove(perfume._id)">Remove</button>
+        <form action="">
+            <button type="button" class="decrement" (click)="decrement(perfume._id)">-</button>
+            <input type="number" name="quantity" id="quantity" [formControl]="perfumeQuantity">
+            <button type="button" class="increment" (click)="increment(perfume._id)">+</button>
+        </form>
+    </div>
+</article>
