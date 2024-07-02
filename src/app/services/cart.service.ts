@@ -6,8 +6,8 @@ import { Perfume } from '../models/perfume.model';
   providedIn: 'root'
 })
 export class CartService {
+  private http = inject(HttpClient);
 
-  private http = inject(HttpClient)
   perfumes = signal(new Map());
 
   total = computed(() => {
@@ -20,6 +20,22 @@ export class CartService {
 
     return total;
   });
+
+  saveCart() {
+    localStorage.setItem('cart', JSON.stringify(this.perfumes));
+  }
+
+  getCart() {
+    const cart = localStorage.getItem('cart');
+    if (cart) {
+      this.perfumes.set(JSON.parse(cart));
+    }
+  }
+
+  removeCart() {
+    localStorage.removeItem('cart');
+    this.perfumes.set(new Map());
+  }
 
   constructor() { }
 
