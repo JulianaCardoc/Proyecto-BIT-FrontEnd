@@ -59,6 +59,8 @@ export class LoginComponent {
             this.router.navigate(['']).then(() => {
               window.location.reload();
             });
+            this.userService.extractUser();
+            console.log(this.userService.user());
             resolve();
           },
           error: (err) => {

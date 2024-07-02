@@ -25,7 +25,7 @@ export class CreditCardsService {
     );
   }
 
-  createAddress(address: CreditCard) {
+  createCreditCard(address: CreditCard) {
     return this.http.post<CreditCard>(`${this.baseUrl}/creditCard`, address).pipe(
       tap((response) => {
         this.getPersonCreditCards();
@@ -33,7 +33,7 @@ export class CreditCardsService {
     );
   }
 
-  updateAddress(id: string, address: CreditCard) {
+  updateCreditCard(id: string, address: CreditCard) {
     return this.http.patch<CreditCard>(`${this.baseUrl}/creditCard/${id}`, address).pipe(
       tap((response) => {
         this.getPersonCreditCards();

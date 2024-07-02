@@ -1,5 +1,6 @@
 a {
   font-size: var(--txt-font-size);
+  height: fit-content;
 }
 
 .product-card {
@@ -20,7 +21,7 @@ a {
   color: white;
   padding: 1vw;
   border: none;
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: var(--txt-font-size);
   font-weight: 200;
 }

@@ -5,303 +5,330 @@
       <button (click)="toggleUserInfo(0)">Personal Information</button>
       <button (click)="toggleUserInfo(1)">Addresses</button>
       <button (click)="toggleUserInfo(2)">Payment Methods</button>
-      <button (click)="toggleUserInfo(3)">My Orders</button>
+      <button (click)="toggleUserInfo(3)" (click)="getUserSells()">My Orders</button>
     </div>
   </section>
   @switch(switchUserInfo()) { @case (0) {
-  <section class="personal-info">
-    <div class="title">
-      <h2>Personal Information</h2>
-      <button>Edit</button>
-    </div>
-    <div class="card-list">
-      <div class="card-info">
-        <span>Name: </span>
-        <p>{{user?.person?.name}}</p>
-      </div>
-      <div class="card-info">
-        <span>Lastname: </span>
-        <p>{{user?.person?.lastname}}</p>
-      </div>
-      <div class="card-info">
-        <span>Email: </span>
-        <p>{{user?.email}}</p>
-      </div>
-      <div class="card-info">
-        <span>Document: </span>
-        <p>{{user?.person?.document}}</p>
-        <span class="document">Document type: </span>
-        <p>{{user?.person?.documentType}}</p>
-      </div>
-      <div class="card-info">
-        <span>Cellphone: </span>
-        <p>{{user?.person?.cellphone}}</p>
-      </div>
-    </div>
-  </section>
-  } @case(1) {
-  <section class="addresses-info">
-    <div class="title">
-      <h2>Addresses</h2>
-    </div>
-    <div class="card-list">
-      <div class="card">
-        <div class="address-edit">
-          <div class="card-info">
-            <span>Address: </span>
-            <p>Calle 61 #23-20</p>
-          </div>
-          <div><button>Edit</button></div>
-        </div>
-        <div class="card-info">
-          <span>Complement: </span>
-          <p>
-            Lorem ipsum dolor sit amet consectetur Repellendus beatae autem aut
-            ut aliqui
-          </p>
-        </div>
-        <div class="card-info">
-          <span>City: </span>
-          <p>Manizales</p>
-        </div>
-        <div class="card-info">
-          <span>State: </span>
-          <p>Caldas</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  } @case(2) {
-    <section class="payment-info">
+   @if (!editMode()) {
+    <section class="personal-info">
       <div class="title">
-        <h2>Payment Methods</h2>
+        <h2>Personal Information</h2>
+        <button (click)="toggleEditMode($event)">Edit</button>
+      </div>
+      <div class="card-list">
+        <div class="card-info">
+          <span>Name: </span>
+          <p>{{user()?.person?.name}}</p>
+        </div>
+        <div class="card-info">
+          <span>Lastname: </span>
+          <p>{{user()?.person?.lastname}}</p>
+        </div>
+        <div class="card-info">
+          <span>Email: </span>
+          <p>{{user()?.email}}</p>
+        </div>
+        <div class="card-info">
+          <span>Document: </span>
+          <p>{{user()?.person?.document}}</p>
+          <span class="document">Document type: </span>
+          <p>{{user()?.person?.documentType}}</p>
+        </div>
+        <div class="card-info">
+          <span>Cellphone: </span>
+          <p>{{user()?.person?.cellphone}}</p>
+        </div>
+      </div>
+    </section>
+   }
+  @if (editMode()) {
+    <section class="edit-personal-info">
+      <div><h2>Personal Information</h2></div>
+      <form class="card-list" [formGroup]="personalInfoForm" (submit)="updatePersonalInfo()">
+        <fieldset>
+          <label for="name" class="card-info"
+            >Name: 
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Name"
+              formControlName="name"
+              required
+          /></label>
+          <label for="lastname" class="card-info"
+            >Lastname:
+            <input
+              id="lastname"
+              name="lastname"
+              type="text"
+              placeholder="Lastname"
+              formControlName="lastname"
+              required
+          /></label>
+          <label for="email" class="card-info"
+            >Email:
+            <input
+              id="email"
+              name="email"
+              type="text"
+              placeholder="Email"
+              formControlName="email"              
+          /></label>
+          <label for="document" class="card-info"
+            >Document:
+            <input
+              id="document"
+              name="document"
+              type="number"
+              placeholder="Document"
+              formControlName="document"
+              required
+          /></label>
+          <label for="document-type" class="card-info"
+            >Document type:
+            <select id="document-type" name="document-type" formControlName="documentType">
+              <option [defaultSelected]="">{{user()?.person?.documentType}}</option>
+              <option value="CC">CC</option>
+              <option value="CE">CE</option>
+              <option value="Passport">Passport</option>
+          </select></label>
+          <label for="cellphone" class="card-info"
+            >Cellphone:
+            <input
+              id="cellphone"
+              name="cellphone"
+              type="number"
+              placeholder="Cellphone"
+              formControlName="cellphone"
+              required
+          /></label>
+        </fieldset>
+        <button (click)="toggleEditMode($event)" (click)="updatePersonalInfo()">Save</button>
+      </form>
+    </section>
+  }
+  
+  } @case(1) {
+  @if (!editMode()) {
+    <section class="addresses-info">
+      <div class="title">
+        <h2>Addresses</h2>
       </div>
       <div class="card-list">
         <div class="card">
-          <div class="payment-edit">
+          <div class="address-edit">
             <div class="card-info">
-              <span>Name on Card: </span>
-              <p>jinx alejandra</p>
+              <span>Address: </span>
+              <p>Calle 61 #23-20</p>
             </div>
-            <div><button>Edit</button></div>
+            <div><button (click)="toggleEditMode($event)">Edit</button></div>
           </div>
           <div class="card-info">
-            <span>Card Number: </span>
+            <span>Complement: </span>
             <p>
-              0
+              Lorem ipsum dolor sit amet consectetur Repellendus beatae autem aut
+              ut aliqui
             </p>
           </div>
           <div class="card-info">
-            <span>Good Thru: </span>
-            <p>01/02/03</p>
+            <span>City: </span>
+            <p>Manizales</p>
           </div>
           <div class="card-info">
-            <span>Type: </span>
-            <p>Visa</p>
+            <span>State: </span>
+            <p>Caldas</p>
           </div>
         </div>
       </div>
     </section>
+  }
+  @if (editMode()) {
+    <section class="edit-addresses">
+      <div><h2>Addresses</h2></div>
+      <form class="card-list">
+        <fieldset>
+          <label for="address" class="card-info"
+            >Address: 
+            <input
+              id="address"
+              name="address"
+              type="text"
+              placeholder="Address"
+              formControlName="address"
+              [defaultValue]="[user()?.person?.document]"
+              required
+          /></label>
+          <label for="complement" class="card-info"
+            >Complement:
+            <input
+              id="complement"
+              name="complement"
+              type="text"
+              placeholder="Complement"
+              formControlName="complement"
+              [defaultValue]="[user()?.person?.lastname]"
+              required
+          /></label>
+          <label for="city" class="card-info"
+            >City:
+            <input
+              id="city"
+              name="city"
+              type="text"
+              placeholder="city"
+              formControlName="city"
+              [defaultValue]="[user()?.email]"
+              required
+          /></label>
+          <label for="state" class="card-info"
+            >State:
+            <input
+              id="state"
+              name="state"
+              type="number"
+              placeholder="state"
+              formControlName="state"
+              [defaultValue]="[user()?.person?.document]"
+              required
+          /></label>
+        </fieldset>
+        <button (click)="toggleEditMode($event)">Save</button>
+        <button class="delete">Delete</button>
+      </form>
+    </section>
+  }
+  
+  } @case(2) {
+    @if (!editMode()) {
+      <section class="payment-info">
+        <div class="title">
+          <h2>Payment Methods</h2>
+        </div>
+        <div class="card-list">
+          <div class="card">
+            <div class="payment-edit">
+              <div class="card-info">
+                <span>Name on Card: </span>
+                <p>jinx alejandra</p>
+              </div>
+              <div><button (click)="toggleEditMode($event)">Edit</button></div>
+            </div>
+            <div class="card-info">
+              <span>Card Number: </span>
+              <p>
+                0
+              </p>
+            </div>
+            <div class="card-info">
+              <span>Good Thru: </span>
+              <p>01/02/03</p>
+            </div>
+            <div class="card-info">
+              <span>Type: </span>
+              <p>Visa</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    }
+
+    @if (editMode()) {
+      <section class="edit-payment-info">
+        <div><h2>Payment Methods</h2></div>
+        <form class="card-list">
+          <fieldset>
+            <label for="name-on-card" class="card-info"
+              >Name on Card: 
+              <input
+                id="name-on-card"
+                name="name-on-card"
+                type="text"
+                placeholder="Name on Card"
+                formControlName="name"
+                [defaultValue]="[user()?.person?.document]"
+                required
+            /></label>
+            <label for="card-number" class="card-info"
+              >Card Number:
+              <input
+                id="card-number"
+                name="card-number"
+                type="number"
+                placeholder="Card Number"
+                formControlName="cardNumber"
+                [defaultValue]="[user()?.person?.lastname]"
+                required
+            /></label>
+            <label for="good-thru" class="card-info"
+              >Good Thru:
+              <input
+                id="good-thru"
+                name="good-thru"
+                type="month"
+                placeholder="Good Thru"
+                formControlName="goodThru"
+                [defaultValue]="[user()?.email]"
+                required
+            /></label>
+            <label for="type" class="card-info"
+              >Type:
+              <input
+                id="type"
+                name="type"
+                type="text"
+                placeholder="Type"
+                formControlName="type"
+                [defaultValue]="[user()?.person?.document]"
+                required
+            /></label>
+          </fieldset>
+          <button (click)="toggleEditMode($event)">Save</button>
+          <button class="delete">Delete</button>
+        </form>
+      </section>
+    }
   } @case(3) {
   <section class="my-orders-info">
     <div class="title">
       <h2>My Orders</h2>
     </div>
-    <div class="card-list">
-      <div class="card">
-        <div class="order-info">
-          <div>
-            <div class="card-info">
-              <h3>Order ID:</h3>
-              <p>123156486531as</p>
+    @for (order of sells(); track $index) {
+      <div class="card-list">
+        <div class="card">
+          <div class="order-info">
+            <div>
+              <div class="card-info">
+                <h3>Order ID:</h3>
+                <p>{{order._id}}</p>
+              </div>
+              <div class="card-info">
+                <span>Placed on:</span>
+                <p>{{order.date}}</p>
+              </div>
             </div>
-            <div class="card-info">
-              <span>Placed on:</span>
-              <p>date / 01 jun 2024</p>
+            <div>
+              <button>View products</button>
             </div>
           </div>
-          <div>
-            <button>View products</button>
-          </div>
-        </div>
-        <div class="order-summary">
-          <div>
-            <h3>STATUS OF THE ORDER</h3>
-          </div>
-          <div>
-            <span>You paid:</span>
-            <p>$54653 (TOTAL ORDER)</p>
+          <div class="order-summary">
+            <div>
+              <h3>STATUS OF THE ORDER: {{order.status}}</h3>
+            </div>
+            <div>
+              <span>You paid:</span>
+              <p>{{order.total | currency: '$': 'symbol':'1.0-0'}}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    }
   </section>
   }}
 
-  <section class="edit-personal-info">
-  <div><h2>Personal Information</h2></div>
-  <form method="post" class="card-list">
-    <fieldset>
-      <label for="name" class="card-info"
-        >Name: 
-        <input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Name"
-          [defaultValue]="[user?.person?.name]"
-          required
-      /></label>
-      <label for="lastname" class="card-info"
-        >Lastname:
-        <input
-          id="lastname"
-          name="lastname"
-          type="text"
-          placeholder="Lastname"
-          [defaultValue]="[user?.person?.lastname]"
-          required
-      /></label>
-      <label for="email" class="card-info"
-        >Email:
-        <input
-          id="email"
-          name="email"
-          type="text"
-          placeholder="Email"
-          [defaultValue]="[user?.email]"
-          required
-      /></label>
-      <label for="document" class="card-info"
-        >Document:
-        <input
-          id="document"
-          name="document"
-          type="number"
-          placeholder="Document"
-          [defaultValue]="[user?.person?.document]"
-          required
-      /></label>
-      <label for="document-type" class="card-info"
-        >Document type:
-        <select id="document-type" name="document-type" formControlName="documentType">
-          <option [defaultSelected]="">{{user?.person?.documentType}}</option>
-          <option value="CC">CC</option>
-          <option value="CE">CE</option>
-          <option value="Passport">Passport</option>
-      </select></label>
-      <label for="cellphone" class="card-info"
-        >Cellphone:
-        <input
-          id="cellphone"
-          name="cellphone"
-          type="number"
-          placeholder="Cellphone"
-          [defaultValue]="[user?.person?.document]"
-          required
-      /></label>
-    </fieldset>
-    <button>Save</button>
-  </form>
-</section>
+  
 
-<section class="edit-addresses">
-  <div><h2>Addresses</h2></div>
-  <form method="post" class="card-list">
-    <fieldset>
-      <label for="address" class="card-info"
-        >Address: 
-        <input
-          id="address"
-          name="address"
-          type="text"
-          placeholder="Address"
-          [defaultValue]="[user?.person?.document]"
-          required
-      /></label>
-      <label for="complement" class="card-info"
-        >Complement:
-        <input
-          id="complement"
-          name="complement"
-          type="text"
-          placeholder="Complement"
-          [defaultValue]="[user?.person?.lastname]"
-          required
-      /></label>
-      <label for="city" class="card-info"
-        >City:
-        <input
-          id="city"
-          name="city"
-          type="text"
-          placeholder="city"
-          [defaultValue]="[user?.email]"
-          required
-      /></label>
-      <label for="state" class="card-info"
-        >State:
-        <input
-          id="state"
-          name="state"
-          type="number"
-          placeholder="state"
-          [defaultValue]="[user?.person?.document]"
-          required
-      /></label>
-    </fieldset>
-    <button>Save</button>
-    <button class="delete">Delete</button>
-  </form>
-</section>
 
-<section class="edit-payment-info">
-  <div><h2>Payment Methods</h2></div>
-  <form method="post" class="card-list">
-    <fieldset>
-      <label for="name-on-card" class="card-info"
-        >Name on Card: 
-        <input
-          id="name-on-card"
-          name="name-on-card"
-          type="text"
-          placeholder="Name on Card"
-          [defaultValue]="[user?.person?.document]"
-          required
-      /></label>
-      <label for="card-number" class="card-info"
-        >Card Number:
-        <input
-          id="card-number"
-          name="card-number"
-          type="number"
-          placeholder="Card Number"
-          [defaultValue]="[user?.person?.lastname]"
-          required
-      /></label>
-      <label for="good-thru" class="card-info"
-        >Good Thru:
-        <input
-          id="good-thru"
-          name="good-thru"
-          type="month"
-          placeholder="Good Thru"
-          [defaultValue]="[user?.email]"
-          required
-      /></label>
-      <label for="type" class="card-info"
-        >Type:
-        <input
-          id="type"
-          name="type"
-          type="text"
-          placeholder="Type"
-          [defaultValue]="[user?.person?.document]"
-          required
-      /></label>
-    </fieldset>
-    <button>Save</button>
-    <button class="delete">Delete</button>
-  </form>
-</section>
+
+
 </main>

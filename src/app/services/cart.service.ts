@@ -22,13 +22,13 @@ export class CartService {
   });
 
   saveCart() {
-    localStorage.setItem('cart', JSON.stringify(this.perfumes));
+    localStorage.setItem('cart', JSON.stringify(Array.from(this.perfumes().entries())));
   }
 
   getCart() {
     const cart = localStorage.getItem('cart');
     if (cart) {
-      this.perfumes.set(JSON.parse(cart));
+      this.perfumes.set(new Map<string, string>(JSON.parse(cart)));
     }
   }
 
@@ -37,7 +37,9 @@ export class CartService {
     this.perfumes.set(new Map());
   }
 
-  constructor() { }
+  constructor() { 
+    this.getCart();
+  }
 
   addToCart(perfume: Perfume) {
     this.perfumes.update(perfumesMap => {
@@ -47,7 +49,7 @@ export class CartService {
       } else {
         perfumesMap.set(perfume._id, { ...perfume, quantity: 1 });
       }
-
+      this.saveCart();
       return new Map(perfumesMap);
     });
   }
@@ -59,7 +61,7 @@ export class CartService {
       if (perfumeInCart) {
         perfumesMap.set(perfumeId, { ...perfumeInCart, quantity: perfumeInCart.quantity + 1 })
       }
-
+      this.saveCart();
       return new Map(perfumesMap);
     })
   }
@@ -72,7 +74,7 @@ export class CartService {
       } else {
         perfumesMap.set(perfumeId, { ...perfumeInCart!, quantity: perfumeInCart!.quantity - 1 })
       }
-
+      this.saveCart();
       return new Map(perfumesMap);
     })
   }
@@ -80,6 +82,7 @@ export class CartService {
   deleteProduct(perfumeId: string) {    
     this.perfumes.update(perfumesMap => {
       perfumesMap.delete(perfumeId);
+      this.saveCart();
       return new Map(perfumesMap)
     })
   }

@@ -9,6 +9,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { loginGuard } from './guards/login.guard';
 
 export const routes: Routes = [
   {
@@ -23,8 +24,8 @@ export const routes: Routes = [
       { path: 'register', component: RegisterComponent },
       { path: 'aboutUs', component: AboutusComponent },
       { path: 'contact', component: ContactComponent },
-      { path: 'profile', component: ProfileComponent },
-      { path: 'checkout', component: CheckoutComponent}
+      { path: 'profile', component: ProfileComponent, canActivate: [loginGuard] },
+      { path: 'checkout', component: CheckoutComponent, canActivate: [loginGuard]}
     ],
   },
 ];

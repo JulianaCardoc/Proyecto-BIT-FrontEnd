@@ -9,7 +9,7 @@ export interface User {
     person?: string,
 }
 export interface Person {
-    _id: string,
+    _id?: string,
     name: string,
     lastname: string,
     document: string,
@@ -24,9 +24,15 @@ export interface Rol {
 }
 
 export interface FullUser {
-    _id: string,
-    email: string,
-    password: string,
+    _id?: string,
+    email?: string,
+    password?: string,
     person: Person,
     rol?: Rol
+}
+
+export interface PartialUser {
+    _id?: string,
+    email?: string,
+    password?: string,
 }

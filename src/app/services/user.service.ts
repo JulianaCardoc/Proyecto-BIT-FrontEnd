@@ -12,18 +12,18 @@ export class UserService {
 
   user = signal<FullUser | null>(null);
 
-  constructor() {}
+  constructor() {
+    this.extractUser();
+  }
 
   storageUser(user: FullUser) {
     localStorage.setItem("user", JSON.stringify(user))
   }
 
-  extractUser(): FullUser | null {
+  extractUser() {
     const user = localStorage.getItem("user")
     if (user) {
-      return JSON.parse(user);
-    } else {
-      return null;
+      this.user.set(JSON.parse(user));
     }
   }
 
@@ -31,15 +31,12 @@ export class UserService {
     return this.http.get<FullUser>(`${this.baseUrl}/users/email/${email}`).pipe(
       tap((response) => {
         this.user.set(response);
+        this.storageUser(response);
       })
     );
   }
 
   updatePerson(id: string, person: Person) {
-    return this.http.patch<Person>(`${this.baseUrl}/person/${id}`, person).pipe(
-      tap((response) => {
-        
-      })
-    );
+    return this.http.patch<Person>(`${this.baseUrl}/person/${id}`, person);
   }
 }

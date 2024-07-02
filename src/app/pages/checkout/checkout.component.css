@@ -64,3 +64,24 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+@media (max-width: 844px) {
+    main {
+        max-width: 600px;
+    }
+    .cart-products {
+        width: 100%;
+    }
+    .checkout {
+        flex-direction: column;
+    }
+    .billing-info {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 620px) {
+    main {
+        max-width: 350px;
+    }
+}
