@@ -44,13 +44,6 @@ input {
 
 #document-type {
     display: block;
-    font-family: "Outfit", sans-serif;
-    color: var(--main-txt-color);
-}
-
-#document-type option {
-    font-family: "Outfit", sans-serif;
-    color: var(--main-txt-color);
 }
 
 label[for=document] {

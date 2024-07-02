@@ -14,11 +14,11 @@
   --txt-font-size: 1rem;
 }
 
-li, a, h2, h3, button, p, h1, label, input, span {
+li, a, h2, h3, button, p, h1, label, input, span, option, select {
     font-family: "Outfit", sans-serif;
 }
 
-li, a, h2, h3, button, p, h1, span, label {
+li, a, h2, h3, button, p, h1, span, label, option, select {
   color: var(--main-txt-color);
 }
 

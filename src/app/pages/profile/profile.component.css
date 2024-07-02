@@ -13,7 +13,7 @@ h3 {
     font-size: var(--txt-font-size);
 }
 
-p, span {
+p, span, input {
     font-size: var(--txt-font-size);
 }
 
@@ -34,7 +34,7 @@ button {
     cursor: pointer;
 }
 
-.personal-info, .addresses-info, .my-orders-info {
+.personal-info, .addresses-info, .my-orders-info, .payment-info, .edit-personal-info, .edit-addresses, .edit-payment-info {
     padding-top: 2vw;
 }
 
@@ -76,7 +76,7 @@ button:hover {
     align-items: flex-end;
 }
 
-.address-edit {
+.address-edit, .payment-edit {
     display: flex;
     justify-content: space-between;
 }
@@ -96,6 +96,37 @@ button:hover {
     align-items: center;
     padding: 1vw 5px;
     text-align: center;
+}
+
+fieldset {
+    border: none;
+}
+
+input, #document-type {
+    width: 100%;
+    min-height: 2em;
+    margin: 5px 0 5px 10px;
+    padding: 5px;
+    border: 1px solid #cacaca;
+}
+
+#document-type, #good-thru {
+    width: 20%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.delete {
+    margin-left: 15px;
 }
 
 @media (max-width: 844px) {
