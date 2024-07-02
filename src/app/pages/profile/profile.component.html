@@ -2,12 +2,13 @@
   <section>
     <div><h1>── My account</h1></div>
     <div class="user-info">
-      <button>Personal Information</button>
-      <button>Addresses</button>
-      <button>Payment Methods</button>
-      <button>My Orders</button>
+      <button (click)="toggleUserInfo(0)">Personal Information</button>
+      <button (click)="toggleUserInfo(1)">Addresses</button>
+      <button (click)="toggleUserInfo(2)">Payment Methods</button>
+      <button (click)="toggleUserInfo(3)">My Orders</button>
     </div>
   </section>
+  @switch(switchUserInfo()) { @case (0) {
   <section class="personal-info">
     <div class="title">
       <h2>Personal Information</h2>
@@ -16,29 +17,29 @@
     <div class="card-list">
       <div class="card-info">
         <span>Name: </span>
-        <p>Juliana</p>
+        <p>{{user?.person?.name}}</p>
       </div>
       <div class="card-info">
         <span>Lastname: </span>
-        <p>Cardona</p>
+        <p>{{user?.person?.lastname}}</p>
       </div>
       <div class="card-info">
         <span>Email: </span>
-        <p>julicardo&#64;gmail.com</p>
+        <p>{{user?.email}}</p>
       </div>
       <div class="card-info">
         <span>Document: </span>
-        <p>100000000</p>
+        <p>{{user?.person?.document}}</p>
         <span class="document">Document type: </span>
-        <p>CC</p>
+        <p>{{user?.person?.documentType}}</p>
       </div>
       <div class="card-info">
         <span>Cellphone: </span>
-        <p>+57 300 02 00 00</p>
+        <p>{{user?.person?.cellphone}}</p>
       </div>
     </div>
   </section>
-
+  } @case(1) {
   <section class="addresses-info">
     <div class="title">
       <h2>Addresses</h2>
@@ -70,7 +71,7 @@
       </div>
     </div>
   </section>
-
+  } @case(2) {
   <section class="my-orders-info">
     <div class="title">
       <h2>My Orders</h2>
@@ -102,7 +103,14 @@
           </div>
         </div>
       </div>
-
+    </div>
+  </section>
+  } @case(3) {
+  <section class="my-orders-info">
+    <div class="title">
+      <h2>My Orders</h2>
+    </div>
+    <div class="card-list">
       <div class="card">
         <div class="order-info">
           <div>
@@ -131,4 +139,65 @@
       </div>
     </div>
   </section>
+  }}
+  <form method="post">
+    <div><h2>Personal Information</h2></div>
+    <fieldset>
+      <label for="name"
+        >Name:
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Name"
+          required
+      /></label>
+      <label for="lastname"
+        >Lastname:
+        <input
+          id="lastname"
+          name="lastname"
+          type="text"
+          placeholder="Lastname"
+          [defaultValue]=""
+          required
+      /></label>
+      <label for="address"
+        >Address:
+        <input
+          id="address"
+          name="address"
+          type="text"
+          placeholder="Address"
+          required
+      /></label>
+      <label for="city"
+        >City:
+        <input
+          id="city"
+          name="city"
+          type="text"
+          placeholder="City"
+          required
+      /></label>
+      <label for="state"
+        >State:
+        <input
+          id="state"
+          name="state"
+          type="text"
+          placeholder="State"
+          required
+      /></label>
+      <label for="observation"
+        >Observation:
+        <input
+          id="observation"
+          name="observation"
+          type="text"
+          placeholder="Suit / Office / Flat"
+          required
+      /></label>
+    </fieldset>
+  </form>
 </main>

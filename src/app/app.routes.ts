@@ -8,6 +8,7 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +24,7 @@ export const routes: Routes = [
       { path: 'aboutUs', component: AboutusComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'checkout', component: CheckoutComponent}
     ],
   },
 ];

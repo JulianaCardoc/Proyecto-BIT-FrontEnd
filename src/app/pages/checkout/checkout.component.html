@@ -1,0 +1,116 @@
+<main>
+  <h1>── Checkout</h1>
+  <section class="checkout">
+    <div class="cart-products">
+      <h2>My Cart ({{ cart().size }})</h2>
+      @for(perfume of cart().values(); track perfume._id) {
+      <app-cart [perfume]="perfume" />
+      }
+      <h2>
+        Total <span>{{ total() | currency }}</span>
+      </h2>
+    </div>
+    <div>
+      <div class="billing-info">
+        <form method="post">
+          <h2>Billing Address</h2>
+          <fieldset>
+            <label for="name"
+              >Name:
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Name"
+                required
+            /></label>
+            <label for="lastname"
+              >Lastname:
+              <input
+                id="lastname"
+                name="lastname"
+                type="text"
+                placeholder="Lastname"
+                required
+            /></label>
+            <label for="address"
+              >Address:
+              <input
+                id="address"
+                name="address"
+                type="text"
+                placeholder="Address"
+                required
+            /></label>
+            <label for="city"
+              >City:
+              <input
+                id="city"
+                name="city"
+                type="text"
+                placeholder="City"
+                required
+            /></label>
+            <label for="state"
+              >State:
+              <input
+                id="state"
+                name="state"
+                type="text"
+                placeholder="State"
+                required
+            /></label>
+            <label for="observation"
+              >Observation:
+              <input
+                id="observation"
+                name="observation"
+                type="text"
+                placeholder="Suit / Office / Flat"
+                required
+            /></label>
+          </fieldset>
+        </form>
+        <form method="post">
+          <h2>Payment Information</h2>
+          <fieldset>
+            <label for="name-on-card"
+              >Name on Card:
+              <input
+                id="name-on-card"
+                name="name-on-card"
+                type="text"
+                placeholder="Name on card"
+                required
+            /></label>
+            <label for="card-number"
+              >Card Number:
+              <input
+                id="card-number"
+                name="card-number"
+                type="text"
+                placeholder="1111-2222-3333-4444"
+                required
+            /></label>
+            <label for="exp-date"
+              >Exp Date:
+              <input
+                id="exp-date"
+                name="exp-date"
+                type="text"
+                placeholder="yy-mm-dd"
+                required
+            /></label>
+            <label for="cvv"
+              >CVV:
+              <input id="cvv" name="cvv" type="text" placeholder="321" required
+            /></label>
+          </fieldset>
+        </form>
+      </div>
+      <div>
+        <input id="submit" type="submit" value="Buy Now" />
+      </div>
+    </div>
+  </section>
+</main>

@@ -28,7 +28,7 @@
         <a [routerLink]="['/productsList', '']">Products <i class="fa-solid fa-angle-down"></i></a>
         <ul class="dropdown">
           @for(category of categories(); track $index) {
-            <a [routerLink]="['/productsList', category._id]"><li>{{category.name}}</li></a>
+            <a [routerLink]="['/productsList', category?._id]"><li>{{category.name}}</li></a>
 
           }
           <a [routerLink]="['/productsList', 'onSale']"><li>On Sale</li></a>
@@ -38,9 +38,23 @@
     </ul>
   </nav>
   <ul>
-    <li class="hideOnMobile">
-      <a href="#"><i class="fa-regular fa-user"></i>My account</a>
-    </li>
+    @if (auth()) {
+      <li class="hideOnMobile">
+        <a routerLink="/profile"><i class="fa-regular fa-user"></i>My account</a>
+      </li>
+      <li class="hideOnMobile">
+        <a routerLink="/profile"><i class="fa-regular fa-user"></i>Log out</a>
+      </li>
+    } @else {
+      <li class="hideOnMobile">
+        <a routerLink="/login"><i class="fa-regular fa-user"></i>Login</a>
+      </li>
+      <li class="hideOnMobile">
+        <a routerLink="/register"><i class="fa-regular fa-user"></i>Register</a>
+      </li>
+    }
+    
+    
     <li class="hideOnMobile" (click)="toggleShowCart()">
       <i class="fa-solid fa-cart-shopping"></i>
     </li>

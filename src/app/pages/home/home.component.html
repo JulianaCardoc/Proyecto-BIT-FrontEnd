@@ -10,28 +10,30 @@
       </div>
     </div>
   </section>
-  <section class="categories">
-    <div class="vertical-image">
-      <div class="txt">
-        <h3>New collection</h3>
-        <button>Shop now</button>
-      </div>
-    </div>
-    <div class="horizontal-images">
-      <div class="top-image">
+  @if (categories().length >= 3) {
+    <section class="categories">
+      <div class="vertical-image">
         <div class="txt">
-          <h3>For him</h3>
-          <button>Shop now</button>
+          <h3>Kids</h3>
+          <button [routerLink]="['/productsList', categories()[2]._id]">Shop now</button>
         </div>
       </div>
-      <div class="bottom-image">
-        <div class="txt">
-          <h3>For her</h3>
-          <button>Shop now</button>
+      <div class="horizontal-images">
+        <div class="top-image">
+          <div class="txt">
+            <h3>For him</h3>
+            <button  [routerLink]="['/productsList', categories()[1]._id]">Shop now</button>
+          </div>
+        </div>
+        <div class="bottom-image">
+          <div class="txt">
+            <h3>For her</h3>
+            <button [routerLink]="['/productsList', categories()[0]._id]">Shop now</button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  }
   <section class="brands">
     <div class="brands-txt"><h1>── Most popular brands</h1></div>
     <div class="brands-logo">
